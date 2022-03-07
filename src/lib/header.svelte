@@ -11,11 +11,10 @@
     SideNavLink,
     SideNavDivider,
     SkipToContent,
-    Content,
-    Grid,
-    Row,
-    Column,
   } from "carbon-components-svelte"
+
+  import Home16 from "carbon-icons-svelte/lib/Home16"
+  import Information16 from "carbon-icons-svelte/lib/Information16"
 
   let isSideNavOpen = false
 </script>
@@ -25,15 +24,15 @@
     <svelte:fragment slot="skip-to-content">
       <SkipToContent />
     </svelte:fragment>
-    <HeaderNav>
+    <!-- <HeaderNav>
       <HeaderNavItem href="#/" text="Home" />
       <HeaderNavItem href="#/about" text="About" />
-    </HeaderNav>
+    </HeaderNav> -->
 
-    <SideNav bind:isOpen={isSideNavOpen}>
+    <SideNav rail bind:isOpen={isSideNavOpen}>
       <SideNavItems>
-        <SideNavLink href="#/" text="Home" />
-        <SideNavLink href="#/about" text="About" />
+        <SideNavLink isSelected icon={Home16} href="#/" text="Home" />
+        <SideNavLink icon={Information16} href="#/about" text="About" />
       </SideNavItems>
     </SideNav>
   </Header>
