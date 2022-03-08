@@ -1,8 +1,10 @@
 <script>
   import { Loading } from 'carbon-components-svelte'
+  import { onMount } from 'svelte'
 
   export let params = {}
-  let title = 'Article'
+  let title = 'Article | Svelte Markdown Blog'
+  let article
 
   const getArticle = async () => {
 
@@ -15,9 +17,9 @@
   }
   }
 
-  let article = getArticle()
-
-  console.log(article)
+  onMount(async () => {
+    article = await getArticle()
+  })
 </script>
 
 <svelte:head>
@@ -25,7 +27,6 @@
 </svelte:head>
 
 {#await article}
-  {title = 'Loading... | Svelte Markdown Blog'}
   <Loading />
 {:then data}
   {title = `${data.title} | Svelte Markdown Blog`}

@@ -8,11 +8,15 @@
   
   import ArticleCard from '../lib/article/ArticleCard.svelte'
 
+  import { onMount } from 'svelte'
+
   /*
     IMPORTANT FOR FUTURE:
     Use a store to hold all of the articles so that the api
     isn't called so frequently
   */
+
+  let articles
 
   const getArticles = async () => {
 
@@ -25,7 +29,9 @@
     }
   }
 
-  let articles = getArticles()
+  onMount(async () => {
+    articles = await getArticles()
+  })
 
 </script>
 
