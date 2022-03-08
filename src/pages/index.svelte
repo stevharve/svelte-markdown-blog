@@ -16,7 +16,7 @@
 
   const getArticles = async () => {
 
-    const res = await fetch('http://localhost:5000/articles')
+    const res = await fetch('https://markdown-blog-api.herokuapp.com/articles')
 
     if(res.ok) {
       return res.json()
