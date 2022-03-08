@@ -29,6 +29,10 @@
 
 </script>
 
+<svelte:head>
+  <title>Home | Svelte Markdown Blog</title>
+</svelte:head>
+
 <Grid>
   <Row>
     <Column>

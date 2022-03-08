@@ -13,6 +13,10 @@
   import NotFound from "./pages/notfound.svelte";
 </script>
 
+<svelte:head>
+  <title>Svlete Markdown Blog</title>
+</svelte:head>
+
 <main>
   <Layout>
     <Router routes={{

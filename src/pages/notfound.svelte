@@ -5,6 +5,10 @@
   import { Grid, Row, Column, ClickableTile } from 'carbon-components-svelte'
 </script>
 
+<svelte:head>
+  <title>404 | Svelte Markdown Blog</title>
+</svelte:head>
+
 <Grid>
   <Row>
     <Column>

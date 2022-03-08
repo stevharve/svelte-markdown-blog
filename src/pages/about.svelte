@@ -6,6 +6,10 @@
   })
 </script>
 
+<svelte:head>
+  <title>About | Svelte Markdown Blog</title>
+</svelte:head>
+
 <h1>About Page!</h1>
 
 <style>
