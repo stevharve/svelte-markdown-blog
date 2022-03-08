@@ -1,5 +1,5 @@
 <script>
-  import Header from './Header.svelte'
+  import Header from './header.svelte'
   import { Content } from 'carbon-components-svelte'
 </script>
 
