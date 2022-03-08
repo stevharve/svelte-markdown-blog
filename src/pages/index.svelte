@@ -6,7 +6,7 @@
     Loading
     } from 'carbon-components-svelte'
   
-  import ArticleCard from '../lib/article/articlecard.svelte'
+  import ArticleCard from '../lib/article/ArticleCard.svelte'
 
   /*
     IMPORTANT FOR FUTURE:
