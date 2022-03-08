@@ -1,15 +1,13 @@
 <script>
-  import Header from './header.svelte'
+  import Header from './Header.svelte'
   import { Content } from 'carbon-components-svelte'
 </script>
 
-<main>
-  <Header />
-  <Content>
-    <slot />
-  </Content>
-</main>
+<Header />
+<Content>
+  <slot />
+</Content>
 
 <style>
-
+  
 </style>

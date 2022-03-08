@@ -1,10 +1,12 @@
 <script>
+  import { onMount } from 'svelte'
 
+  onMount(() => {
+    console.log('About mounted!')
+  })
 </script>
 
-<main>
-  <h1>About Page!</h1>
-</main>
+<h1>About Page!</h1>
 
 <style>
   main {
