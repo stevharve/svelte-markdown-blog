@@ -8,14 +8,20 @@
   
   import ArticleCard from '../lib/article/ArticleCard.svelte'
 
+  /*
+    IMPORTANT FOR FUTURE:
+    Use a store to hold all of the articles so that the api
+    isn't called so frequently
+  */
+
   const getArticles = async () => {
 
-    const res = await fetch('https://svelte.dev/tutorial/random-number')
+    const res = await fetch('http://localhost:5000/articles')
 
     if(res.ok) {
-      return res.text()
+      return res.json()
     } else {
-      throw new Error(res.text())
+      throw new Error(res.json())
     }
   }
 
@@ -35,7 +41,7 @@
         <Loading withOverlay={false} />
       {:then data}
         {#each data as article}
-          <ArticleCard />
+          <ArticleCard title={article.title} description={article.description} href={`#/article/${article.slug}`} />
         {/each}
       {:catch error}
         <h1>Error while loading data! {error}</h1>
