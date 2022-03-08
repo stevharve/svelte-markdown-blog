@@ -1,1 +1,1 @@
-web: node server.js
+web: sirv public --no-clear
