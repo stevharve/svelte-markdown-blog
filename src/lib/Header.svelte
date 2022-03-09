@@ -6,19 +6,26 @@
     HeaderNav,
     HeaderNavItem,
     HeaderNavMenu,
-    SideNav,
-    SideNavItems,
-    SideNavMenu,
-    SideNavMenuItem,
-    SideNavLink,
-    SideNavDivider,
+    // SideNav,
+    // SideNavItems,
+    // SideNavMenu,
+    // SideNavMenuItem,
+    // SideNavLink,
+    // SideNavDivider,
     SkipToContent,
+    HeaderUtilities,
+    HeaderAction,
+    HeaderPanelLinks,
+    HeaderPanelLink,
+    HeaderPanelDivider
   } from "carbon-components-svelte"
 
+  import UserAvatarFilledAlt20 from "carbon-icons-svelte/lib/UserAvatarFilledAlt20"
   // import Home32 from "carbon-icons-svelte/lib/Home32"
   // import Information32 from "carbon-icons-svelte/lib/Information32"
 
   let isSideNavOpen = false
+  let isAccountOpen = false
   
   const onPath = (loc, path) => {
   if(loc === path) {
@@ -37,6 +44,14 @@
     <HeaderNavItem isSelected={onPath($location, '/')} href="#/" text="Home" />
     <HeaderNavItem isSelected={onPath($location, '/about')} href="#/about" text="About" />
   </HeaderNav>
+  <HeaderUtilities>
+    <HeaderAction bind:isOpen={isAccountOpen} icon={UserAvatarFilledAlt20}>
+      <HeaderPanelLinks>
+        <HeaderPanelDivider>Account</HeaderPanelDivider>
+        <HeaderPanelLink href="#/login" on:click={() => isAccountOpen = false}>Log In</HeaderPanelLink>
+      </HeaderPanelLinks>
+    </HeaderAction>
+  </HeaderUtilities>
 
   <!-- <SideNav rail bind:isOpen={isSideNavOpen}>
     <SideNavItems>
